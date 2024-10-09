@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -18,6 +20,9 @@ public class BloodGroup {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
-    @Column(name="blood_group")
+    
     private String bloodGroup;
+
+    @OneToMany(mappedBy="bloodGroup",cascade=CascadeType.ALL,orphanRemoval=true)
+    private List<Patient>patients=new ArrayList<>();
 }

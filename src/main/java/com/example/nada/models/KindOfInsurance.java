@@ -6,20 +6,21 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name="civil_state")
+@Table(name="kindOfInsurance")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class CivilState {
+public class KindOfInsurance {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String name;
-    @OneToMany(mappedBy="civilState",cascade=CascadeType.ALL,orphanRemoval=true)
-    private List<Patient> patients= new ArrayList<>();
+
+    @OneToMany(mappedBy = "kind", cascade = CascadeType.ALL,orphanRemoval=true)
+    private List<InsuranceCompany> insuranceCompany;
 }
