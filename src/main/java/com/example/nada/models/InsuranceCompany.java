@@ -41,5 +41,14 @@ public class InsuranceCompany {
     @OneToMany(mappedBy = "insuranceCompany", cascade=CascadeType.ALL,orphanRemoval=true)
     private List<Patient> patients;
 
-
+    public InsuranceCompany(String name, Integer nif, String email, String responsible, Integer contact, String address, String code, KindOfInsurance kind) {
+        this.name = name;
+        this.nif = nif;
+        this.email = email;
+        this.responsible = responsible;
+        this.contact = contact;
+        this.address = address;
+        this.code = code;
+        this.kind = kind;
+    }
 }

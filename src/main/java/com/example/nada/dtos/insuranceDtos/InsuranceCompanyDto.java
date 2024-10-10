@@ -1,8 +1,6 @@
-package com.example.nada.dtos;
+package com.example.nada.dtos.insuranceDtos;
 
-import com.example.nada.models.KindOfInsurance;
-import com.example.nada.models.Patient;
-import java.util.List;
+import com.example.nada.dtos.KindOfInsuranceDtos.KindOfInsuranceDto;
 
 import java.util.UUID;
 
@@ -15,8 +13,8 @@ public record InsuranceCompanyDto(
         Integer contact,
         String address,
         String code,
-        KindOfInsuranceDto kind,
-        List<PatientDto>patients
+        KindOfInsuranceDto kind
+
 
 
 ) {
