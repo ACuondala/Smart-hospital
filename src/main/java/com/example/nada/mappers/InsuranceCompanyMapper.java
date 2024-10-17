@@ -38,17 +38,17 @@ public class InsuranceCompanyMapper {
 
     // Método para converter de DTO para entidade (opcional)
     //Inserir um novo registro na BD
-    public static InsuranceCompany dtoToInsuranceCompany(InsertInsuranceCompanyDto dto){
-            KindOfInsurance kind= new KindOfInsurance(dto.kind().id());
-            return new InsuranceCompany(
-                    dto.name(),
-                    dto.nif(),
-                    dto.code(),
-                    dto.address(),
-                    dto.contact(),
-                    dto.email(),
-                    dto.responsible(),
-                    kind
-            );
+    public static void dtoToInsuranceCompany(InsuranceCompany insuranceCompany, InsertInsuranceCompanyDto dto) {
+        KindOfInsurance kind = new KindOfInsurance(dto.kind().id(), dto.kind().name());
+
+        // Atualiza os campos da entidade existente com os valores do DTO
+        insuranceCompany.setName(dto.name());
+        insuranceCompany.setNif(dto.nif());
+        insuranceCompany.setCode(dto.code());
+        insuranceCompany.setAddress(dto.address());
+        insuranceCompany.setContact(dto.contact());
+        insuranceCompany.setEmail(dto.email());
+        insuranceCompany.setResponsible(dto.responsible());
+        insuranceCompany.setKind(kind);
     }
 }
