@@ -17,7 +17,7 @@ import java.util.List;
 @AllArgsConstructor
 public class CivilState {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     @OneToMany(mappedBy="civilState",cascade=CascadeType.ALL,orphanRemoval=true)

@@ -16,7 +16,7 @@ import java.util.List;
 @AllArgsConstructor
 public class Gender {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String gender;
 
